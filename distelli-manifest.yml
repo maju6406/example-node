@@ -33,10 +33,19 @@ maju6406/example-node:
     #- ping -c 3 registry.npmjs.com
     #- npm config set registry https://registry.npmjs.org
 
+echo mabl api key: $MABL_API_KEY
+echo mabl env id: $MABL_ENV_ID
+echo mabl app id: $MABL_APP_ID
+
+# MABL
+#curl -s 'https://api.mabl.com/events/deployment' \
+#     -u 'key:$MABL_API_KEY' \
+#     -H 'Content-Type:application/json' \
+#     -d '{"environment_id":"$MABL_ENV_ID","application_id":"$MABL_APP_ID"}'
 
     - echo "---Building---"   
     - npm install 
-    - echo "--Testing--"
+    #- echo "--Testing--"
     #- npm test
     
     #- echo "Distelli Build Image?"
